@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Agregar{% endblock %}
+{% block content %}
+<h1>Add a Trip</h1>
+<form action="/add_travel" method="POST">
+    {% csrf_token %}
+    <div class="mb-3 me-3 text-center">
+        <label for="destination" class="input-group-text">Destino: </label>
+        <input type="text" name="destination" class="text-center form-control input-home mx-auto" placeholder="Ingrese su Destino: Pais, Región a visitar" required />
+
+        <label for="description_plan" class="input-group-text">Description: </label>
+        <input type="text" name="description_plan" class="text-center form-control input-home mx-auto" placeholder="Agregue una descripción del viaje" required />
+        
+        <label for="start_date">Travel Date From:</label>
+        <input type="date" id="start_date" name="start_date" required>
+        <label for="end_date">Travel Date To:</label>
+        <input type="date" id="end_date" name="end_date" required>
+    </div>
+    <div class="text-center">
+        <button type="submit" class="shadow btn btn-primary">Agregue su viaje</button>
+    </div>
+</form>
+
+{% endblock %}
+
+{% block library %}
+{% endblock %}
